@@ -1,0 +1,23 @@
+# Ignorer le dossier node_modules
+node_modules/
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les dossiers de build ou de distribution
+dist/
+build/
+
+# Ignorer les fichiers de cache de l'éditeur
+*.swp
+*.swo
+*.bak
+
+# Ignorer les fichiers temporaires du système
+*.tmp
+*.DS_Store
+
+# Ignorer les fichiers de configuration de l'IDE
+.idea/
+.vscode/
+
