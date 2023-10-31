@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="./assets/font-awesome.min.css">
   <link rel="stylesheet" href="./assets/statexpflat.css">
   <link rel="stylesheet" href="./assets/statexpflat-grid.css">
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
   <style>
     a:lang(ar),
@@ -2056,7 +2059,31 @@
     </div>
 
 
+<script>
 
+let table = document.getElementById('table1');
+let rows = table.querySelectorAll('tbody tr');
+let data = [];
+
+rows.forEach((row) => {
+    let cells = row.querySelectorAll('th, td');
+
+    let countryData = {
+        number: cells[0].textContent,
+        country: cells[1].textContent,
+        offences: {}
+    };
+
+    for (let i = 2; i < cells.length; i++) {
+        let year = 2002 + i - 2;
+        countryData.offences[year] = parseFloat(cells[i].textContent.replace(',', '.'));
+    }
+
+    data.push(countryData);
+});
+
+console.log(data);
+</script>
 
 
 
