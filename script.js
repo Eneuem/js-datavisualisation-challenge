@@ -1,3 +1,8 @@
+import Chart from 'chart.js/auto';
+
+// Votre code JavaScript qui utilise Chart.js
+
+
 //////////////////////////
 /// COLOR GENERATOR    ///
 //////////////////////////
@@ -13,7 +18,7 @@ function getRandomColor() {
  /////      TAB 1+2  ////////
 ////////////////////////////
 
-function generateChartFromTable(tableId, chartType = 'line') {
+function generateChartFromTable(tableId, chartType) {
     let table = document.getElementById(tableId);
     let rows = table.querySelectorAll('tbody tr');
     let data = [];
@@ -26,7 +31,7 @@ function generateChartFromTable(tableId, chartType = 'line') {
             country: cells[1].textContent,
             offences: {}
         };
-    
+        
         for (let i = 2; i < cells.length; i++) {
             let year = 2002 + i - 2;
             countryData.offences[year] = parseFloat(cells[i].textContent.replace(',', '.'));
@@ -78,7 +83,7 @@ function generateChartFromTable(tableId, chartType = 'line') {
                     beginAtZero: true
                 },
                 x: {
- barThickness: 6,
+        barThickness: 6,
         maxBarThickness: 8,
         minBarLength: 2,
                 }
